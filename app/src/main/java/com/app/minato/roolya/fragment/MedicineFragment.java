@@ -16,7 +16,7 @@ import com.app.minato.roolya.model.MedicineModel;
 import java.util.ArrayList;
 
 
-public class MedicineFragment extends Fragment {
+public class MedicineFragment extends Fragment implements MedicineAdapter.listenerRe {
 
     private View view;
     private RecyclerView mRecyclerView;
@@ -27,6 +27,7 @@ public class MedicineFragment extends Fragment {
     public MedicineFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,8 +53,15 @@ public class MedicineFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new MedicineAdapter(mDataset);
+
         mRecyclerView.setAdapter(mAdapter);
+
         return view;
     }
 
+
+    @Override
+    public void onclickitem() {
+
+    }
 }

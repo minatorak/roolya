@@ -8,8 +8,7 @@ import com.app.minato.roolya.R
 import com.app.minato.roolya.model.MedicineModel
 import kotlinx.android.synthetic.main.item_re.view.*
 
-
-class MedicineAdapter(val itemList: ArrayList<MedicineModel>):RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class DiseaseAdapter(val itemList: ArrayList<MedicineModel>): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
     interface listenerRe{
         fun onclickitem()
@@ -17,7 +16,7 @@ class MedicineAdapter(val itemList: ArrayList<MedicineModel>):RecyclerView.Adapt
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view= inflater.inflate(R.layout.item_re,parent,false)
-        return MedicineViewHoder(view)
+        return DiseaseViewHoder(view)
     }
 
     override fun getItemCount(): Int {
@@ -25,13 +24,13 @@ class MedicineAdapter(val itemList: ArrayList<MedicineModel>):RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as MedicineViewHoder).bindData(itemList[position])
+        (holder as DiseaseViewHoder).bindData(itemList[position])
         holder.itemView.setOnClickListener {
 
         }
     }
 
-    class MedicineViewHoder(itemView: View) :RecyclerView.ViewHolder(itemView){
+    class DiseaseViewHoder(view: View) :RecyclerView.ViewHolder(view){
         fun bindData(item:MedicineModel){
             itemView.textView.text = item.name
         }
