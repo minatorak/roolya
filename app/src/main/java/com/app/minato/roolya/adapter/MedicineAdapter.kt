@@ -11,8 +11,13 @@ import kotlinx.android.synthetic.main.item_re.view.*
 
 class MedicineAdapter(val itemList: ArrayList<MedicineModel>):RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
+    var listener:listenerRe? = null
     interface listenerRe{
-        fun onclickitem()
+        fun onclickitem(medicineModel: MedicineModel)
+    }
+
+    fun setListener(){
+
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -27,7 +32,7 @@ class MedicineAdapter(val itemList: ArrayList<MedicineModel>):RecyclerView.Adapt
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as MedicineViewHoder).bindData(itemList[position])
         holder.itemView.setOnClickListener {
-
+            listener?.onclickitem(itemList[position])
         }
     }
 

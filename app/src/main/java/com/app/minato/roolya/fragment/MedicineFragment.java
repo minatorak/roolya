@@ -13,8 +13,9 @@ import com.app.minato.roolya.R;
 import com.app.minato.roolya.adapter.MedicineAdapter;
 import com.app.minato.roolya.model.MedicineModel;
 
-import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 
 public class MedicineFragment extends Fragment implements MedicineAdapter.listenerRe {
 
@@ -24,10 +25,14 @@ public class MedicineFragment extends Fragment implements MedicineAdapter.listen
     private MedicineAdapter mAdapter;
     private ArrayList<MedicineModel> mDataset;
 
+    private MedicineFragmentListener listener;
+
+    public interface MedicineFragmentListener{
+        void mdicineListener(MedicineModel medicineModel);
+    }
     public MedicineFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -59,9 +64,8 @@ public class MedicineFragment extends Fragment implements MedicineAdapter.listen
         return view;
     }
 
-
     @Override
-    public void onclickitem() {
-
+    public void onclickitem(MedicineModel medicineModel) {
+        if (listener!= null) listener.mdicineListener(medicineModel);
     }
 }

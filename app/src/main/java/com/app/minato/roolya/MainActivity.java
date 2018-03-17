@@ -12,8 +12,10 @@ import android.view.MenuItem;
 import com.app.minato.roolya.fragment.DiseaseFragment;
 import com.app.minato.roolya.fragment.MedicineFragment;
 import com.app.minato.roolya.fragment.PagerContainerFragment;
+import com.app.minato.roolya.model.MedicineModel;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements DiseaseFragment.DiseaseFragmentListener,
+MedicineFragment.MedicineFragmentListener{
 
     private BottomNavigationView navigation;
     Fragment currentFragment;
@@ -76,4 +78,13 @@ public class MainActivity extends AppCompatActivity  {
         transaction.commit();
     }
 
+    @Override
+    public void diseaseListener(MedicineModel medicineModel) {
+
+    }
+
+    @Override
+    public void mdicineListener(MedicineModel medicineModel) {
+
+    }
 }

@@ -1,6 +1,4 @@
 package com.app.minato.roolya.fragment;
-
-
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,16 +10,12 @@ import android.view.ViewGroup;
 import com.app.minato.roolya.MyPageAdapter;
 import com.app.minato.roolya.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class PagerContainerFragment extends Fragment {
     private ViewPager pager;
     MyPageAdapter adapter;
     public PagerContainerFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +32,5 @@ public class PagerContainerFragment extends Fragment {
         pager.setAdapter(adapter);
 
     }
-
 
 }
