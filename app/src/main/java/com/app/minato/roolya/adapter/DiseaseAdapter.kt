@@ -4,25 +4,26 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import com.app.minato.roolya.R
 import com.app.minato.roolya.model.MedicineModel
 import kotlinx.android.synthetic.main.item_re.view.*
 
-class MedicineAdapter(val itemList: ArrayList<MedicineModel>):RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class DiseaseAdapter(val itemList: ArrayList<MedicineModel>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    var listener:listenerRe? = null
-    interface listenerRe{
-        fun onclickitem(medicineModel: MedicineModel)
+    var listener:ClickItem? = null
+
+    fun setlistener(listtener_out: ClickItem) {
+        listener = listtener_out
     }
 
-    fun setListener(){
-
+    interface ClickItem {
+        fun onClicklist(medicineModel: MedicineModel)
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view= inflater.inflate(R.layout.item_re,parent,false)
-        return MedicineViewHoder(view)
+        val view = inflater.inflate(R.layout.item_re, parent, false)
+        return DiseaseViewHoder(view)
     }
 
     override fun getItemCount(): Int {
@@ -30,14 +31,14 @@ class MedicineAdapter(val itemList: ArrayList<MedicineModel>):RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as MedicineViewHoder).bindData(itemList[position])
+        (holder as DiseaseViewHoder).bindData(itemList[position])
         holder.itemView.setOnClickListener {
-            listener?.onclickitem(itemList[position])
+            listener?.onClicklist(itemList[position])
         }
     }
 
-    class MedicineViewHoder(itemView: View) :RecyclerView.ViewHolder(itemView){
-        fun bindData(item:MedicineModel){
+    class DiseaseViewHoder(view: View) : RecyclerView.ViewHolder(view) {
+        fun bindData(item: MedicineModel) {
             itemView.textView.text = item.name
         }
     }

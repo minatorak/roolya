@@ -26,7 +26,6 @@ public class TakePhotoFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -41,6 +40,5 @@ public class TakePhotoFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
     }
-
 
 }

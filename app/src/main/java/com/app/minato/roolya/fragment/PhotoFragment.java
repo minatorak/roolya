@@ -1,6 +1,5 @@
 package com.app.minato.roolya.fragment;
 
-
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.app.minato.roolya.R;
-
 
 public class PhotoFragment extends Fragment  {
     AppCompatImageView imageView;
@@ -40,12 +38,9 @@ public class PhotoFragment extends Fragment  {
         return inflater.inflate(R.layout.fragment_photo, container, false);
     }
 
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-
     }
 
 
