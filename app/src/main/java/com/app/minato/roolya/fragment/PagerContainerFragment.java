@@ -12,12 +12,10 @@ import android.view.ViewGroup;
 import com.app.minato.roolya.MyPageAdapter;
 import com.app.minato.roolya.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class PagerContainerFragment extends Fragment {
     private ViewPager pager;
     MyPageAdapter adapter;
+
     public PagerContainerFragment() {
         // Required empty public constructor
     }
@@ -33,7 +31,7 @@ public class PagerContainerFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        pager =  getView().findViewById(R.id.pager);
+        pager = getView().findViewById(R.id.pager);
         adapter = new MyPageAdapter(getChildFragmentManager());
         pager.setAdapter(adapter);
 

@@ -1,7 +1,6 @@
 package com.app.minato.roolya.fragment;
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,10 +9,6 @@ import android.view.ViewGroup;
 
 import com.app.minato.roolya.R;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class MedicineFragment extends Fragment {
 
     public MedicineFragment() {
