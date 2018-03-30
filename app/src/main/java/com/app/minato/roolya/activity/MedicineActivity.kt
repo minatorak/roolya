@@ -1,7 +1,8 @@
-package com.app.minato.roolya
+package com.app.minato.roolya.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.app.minato.roolya.R
 
 class MedicineActivity : AppCompatActivity() {
 

@@ -1,6 +1,5 @@
-package com.app.minato.roolya;
+package com.app.minato.roolya.adapter;
 
-import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;

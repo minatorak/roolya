@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context="com.app.minato.roolya.MainActivity">
+    tools:context="com.app.minato.roolya.activity.MainActivity">
 
     <FrameLayout
         android:id="@+id/layout_fragment_container"

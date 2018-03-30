@@ -1,4 +1,4 @@
-package com.app.minato.roolya;
+package com.app.minato.roolya.activity;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,13 +9,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.app.minato.roolya.R;
 import com.app.minato.roolya.fragment.DiseaseFragment;
 import com.app.minato.roolya.fragment.MedicineFragment;
 import com.app.minato.roolya.fragment.PagerContainerFragment;
 import com.app.minato.roolya.model.MedicineModel;
 
 public class MainActivity extends AppCompatActivity implements DiseaseFragment.DiseaseFragmentListener,
-MedicineFragment.MedicineFragmentListener{
+        MedicineFragment.MedicineFragmentListener {
 
     private BottomNavigationView navigation;
     Fragment currentFragment;
@@ -51,30 +52,28 @@ MedicineFragment.MedicineFragmentListener{
     };
 
     private void findview() {
-        navigation =  findViewById(R.id.navigation);
+        navigation = findViewById(R.id.navigation);
     }
 
-    private void photopager(){
+    private void photopager() {
         currentFragment = new PagerContainerFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.layout_fragment_container,currentFragment);
-        transaction.commit();
+        switchingFragment(currentFragment);
     }
 
-    private void medicine(){
+    private void medicine() {
         currentFragment = new MedicineFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.layout_fragment_container,currentFragment);
-        transaction.commit();
+        switchingFragment(currentFragment);
     }
 
-    private void disease(){
+    private void disease() {
         currentFragment = new DiseaseFragment();
+        switchingFragment(currentFragment);
+    }
+
+    private void switchingFragment(Fragment currentFragment) {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.layout_fragment_container,currentFragment);
+        transaction.replace(R.id.layout_fragment_container, currentFragment);
         transaction.commit();
     }
 

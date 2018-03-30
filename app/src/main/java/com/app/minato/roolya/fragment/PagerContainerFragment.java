@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.app.minato.roolya.MyPageAdapter;
+import com.app.minato.roolya.adapter.MyPageAdapter;
 import com.app.minato.roolya.R;
 
 public class PagerContainerFragment extends Fragment {
